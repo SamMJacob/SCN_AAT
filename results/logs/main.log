@@ -1,0 +1,920 @@
+== setting=A task=binary seed=0 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9971)
+  MLP                macroF1=0.9966 acc=0.9985 F1_Attack=0.9940 rules=nan train=1.0s [3s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.9463)
+  FCM-clf            macroF1=0.9411 acc=0.9720 F1_Attack=0.8984 rules=10 train=1.7s [10s]
+  LDA                macroF1=0.8333 acc=0.9055 F1_Attack=0.7237 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9964)
+  LR                 macroF1=0.9949 acc=0.9978 F1_Attack=0.9910 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9957)
+  LinSVM             macroF1=0.9949 acc=0.9978 F1_Attack=0.9910 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9986)
+  RBF-SVM            macroF1=0.9960 acc=0.9982 F1_Attack=0.9930 rules=nan train=0.1s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=nan train=0.8s [2s]
+  ANFIS-Random       macroF1=0.9401 acc=0.9715 F1_Attack=0.8967 rules=20 train=1.6s [2s]
+  ANFIS-Random+stk   macroF1=0.9977 acc=0.9990 F1_Attack=0.9960 rules=30 train=1.8s [2s]
+  ANFIS-KMeans       macroF1=0.9977 acc=0.9990 F1_Attack=0.9960 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9983 acc=0.9992 F1_Attack=0.9970 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=8 train=1.4s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=11 train=1.8s [2s]
+  ANFIS-FCM          macroF1=0.9983 acc=0.9992 F1_Attack=0.9970 rules=20 train=3.8s [5s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=5.4s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (390 rows)
+== setting=A task=binary seed=1 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9993)
+  MLP                macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=nan train=1.0s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9993)
+  FCM-clf            macroF1=0.9494 acc=0.9762 F1_Attack=0.9124 rules=30 train=4.4s [12s]
+  LDA                macroF1=0.8595 acc=0.9237 F1_Attack=0.7645 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9950)
+  LR                 macroF1=0.9983 acc=0.9992 F1_Attack=0.9970 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9957)
+  LinSVM             macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9971)
+  RBF-SVM            macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=nan train=0.1s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9994 acc=0.9998 F1_Attack=0.9990 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9994 acc=0.9998 F1_Attack=0.9990 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=20 train=0.8s [1s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=8 train=1.0s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=11 train=1.6s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=20 train=3.9s [5s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=4.7s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (780 rows)
+== setting=A task=binary seed=2 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9986)
+  MLP                macroF1=0.9960 acc=0.9982 F1_Attack=0.9930 rules=nan train=0.9s [3s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9445)
+  FCM-clf            macroF1=0.9558 acc=0.9795 F1_Attack=0.9235 rules=20 train=3.0s [10s]
+  LDA                macroF1=0.8558 acc=0.9213 F1_Attack=0.7586 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9971)
+  LR                 macroF1=0.9960 acc=0.9982 F1_Attack=0.9930 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 1} (val macro-F1 0.9971)
+  LinSVM             macroF1=0.9937 acc=0.9972 F1_Attack=0.9890 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9993)
+  RBF-SVM            macroF1=0.9966 acc=0.9985 F1_Attack=0.9940 rules=nan train=0.1s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9954 acc=0.9980 F1_Attack=0.9919 rules=20 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9954 acc=0.9980 F1_Attack=0.9919 rules=30 train=0.7s [1s]
+  ANFIS-KMeans       macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=20 train=0.8s [1s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=1.1s [1s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=8 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=11 train=1.6s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=20 train=4.1s [5s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=5.1s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (1170 rows)
+== setting=A task=binary seed=3 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9971)
+  MLP                macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=nan train=1.1s [3s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9420)
+  FCM-clf            macroF1=0.9528 acc=0.9780 F1_Attack=0.9184 rules=20 train=3.1s [11s]
+  LDA                macroF1=0.8580 acc=0.9227 F1_Attack=0.7621 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9964)
+  LR                 macroF1=0.9966 acc=0.9985 F1_Attack=0.9940 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9971)
+  LinSVM             macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9971)
+  RBF-SVM            macroF1=0.9977 acc=0.9990 F1_Attack=0.9960 rules=nan train=0.2s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=20 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9937 acc=0.9972 F1_Attack=0.9890 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=8 train=1.2s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=12 train=1.7s [2s]
+  ANFIS-FCM          macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=20 train=4.3s [5s]
+  ANFIS-FCM+stk      macroF1=0.9988 acc=0.9995 F1_Attack=0.9980 rules=30 train=5.3s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (1560 rows)
+== setting=A task=binary seed=4 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9957)
+  MLP                macroF1=0.9960 acc=0.9982 F1_Attack=0.9930 rules=nan train=0.9s [2s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9463)
+  FCM-clf            macroF1=0.9518 acc=0.9775 F1_Attack=0.9167 rules=20 train=3.3s [12s]
+  LDA                macroF1=0.8528 acc=0.9193 F1_Attack=0.7540 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9950)
+  LR                 macroF1=0.9954 acc=0.9980 F1_Attack=0.9920 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9964)
+  LinSVM             macroF1=0.9948 acc=0.9978 F1_Attack=0.9909 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9971)
+  RBF-SVM            macroF1=0.9971 acc=0.9988 F1_Attack=0.9950 rules=nan train=0.1s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9942 acc=0.9975 F1_Attack=0.9899 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9937 acc=0.9972 F1_Attack=0.9889 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.9983 acc=0.9992 F1_Attack=0.9970 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9994 acc=0.9998 F1_Attack=0.9990 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=6 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=9 train=1.5s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=20 train=4.2s [5s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_Attack=1.0000 rules=30 train=5.0s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (1950 rows)
+== setting=A task=multi seed=0 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9955)
+  MLP                macroF1=0.9955 acc=0.9985 F1_DoS=0.9950 rules=nan train=1.6s [4s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.9267)
+  FCM-clf            macroF1=0.9215 acc=0.9725 F1_DoS=0.9934 rules=10 train=2.4s [13s]
+  LDA                macroF1=0.8075 acc=0.9000 F1_DoS=0.9803 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9944)
+  LR                 macroF1=0.9929 acc=0.9978 F1_DoS=0.9950 rules=nan train=0.2s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9921)
+  LinSVM             macroF1=0.9848 acc=0.9952 F1_DoS=0.9901 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9977)
+  RBF-SVM            macroF1=0.9964 acc=0.9985 F1_DoS=0.9901 rules=nan train=0.2s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=nan train=0.7s [2s]
+  ANFIS-Random       macroF1=0.9976 acc=0.9992 F1_DoS=0.9983 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9991 acc=0.9998 F1_DoS=1.0000 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=18 train=1.7s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=21 train=2.1s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=30 train=8.8s [11s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=10.5s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (2445 rows)
+== setting=A task=multi seed=1 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9992)
+  MLP                macroF1=0.9994 acc=0.9998 F1_DoS=0.9983 rules=nan train=1.7s [5s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.9305)
+  FCM-clf            macroF1=0.9304 acc=0.9762 F1_DoS=0.9983 rules=10 train=2.5s [14s]
+  LDA                macroF1=0.8300 acc=0.9185 F1_DoS=0.9868 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9916)
+  LR                 macroF1=0.9958 acc=0.9988 F1_DoS=0.9983 rules=nan train=0.2s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9885)
+  LinSVM             macroF1=0.9895 acc=0.9970 F1_DoS=0.9983 rules=nan train=0.1s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9970)
+  RBF-SVM            macroF1=0.9988 acc=0.9995 F1_DoS=0.9967 rules=nan train=0.2s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9298 acc=0.9760 F1_DoS=0.9983 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=20 train=1.6s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=23 train=2.1s [2s]
+  ANFIS-FCM          macroF1=0.9964 acc=0.9990 F1_DoS=1.0000 rules=30 train=8.8s [10s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=9.9s [10s]
+  -> /home/sammj/scn/results/metrics_long.csv (2940 rows)
+== setting=A task=multi seed=2 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9981)
+  MLP                macroF1=0.9988 acc=0.9995 F1_DoS=0.9967 rules=nan train=2.2s [5s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.9290)
+  FCM-clf            macroF1=0.9384 acc=0.9795 F1_DoS=0.9967 rules=10 train=2.6s [14s]
+  LDA                macroF1=0.8276 acc=0.9165 F1_DoS=0.9868 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9970)
+  LR                 macroF1=0.9926 acc=0.9978 F1_DoS=0.9967 rules=nan train=0.2s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9936)
+  LinSVM             macroF1=0.9880 acc=0.9965 F1_DoS=0.9967 rules=nan train=0.2s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9985)
+  RBF-SVM            macroF1=0.9964 acc=0.9985 F1_DoS=0.9901 rules=nan train=0.2s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9988 acc=0.9995 F1_DoS=0.9967 rules=30 train=0.7s [1s]
+  ANFIS-Random+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=0.9s [1s]
+  ANFIS-KMeans       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=20 train=1.7s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=25 train=2.2s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=30 train=9.1s [10s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=10.2s [10s]
+  -> /home/sammj/scn/results/metrics_long.csv (3435 rows)
+== setting=A task=multi seed=3 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9966)
+  MLP                macroF1=0.9988 acc=0.9995 F1_DoS=0.9967 rules=nan train=1.4s [4s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.9216)
+  FCM-clf            macroF1=0.9347 acc=0.9780 F1_DoS=0.9967 rules=10 train=2.6s [14s]
+  LDA                macroF1=0.8280 acc=0.9180 F1_DoS=0.9787 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9955)
+  LR                 macroF1=0.9952 acc=0.9985 F1_DoS=0.9967 rules=nan train=0.2s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9853)
+  LinSVM             macroF1=0.9943 acc=0.9982 F1_DoS=0.9967 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9970)
+  RBF-SVM            macroF1=0.9976 acc=0.9990 F1_DoS=0.9934 rules=nan train=0.2s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9982 acc=0.9995 F1_DoS=1.0000 rules=30 train=0.9s [1s]
+  ANFIS-Random+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.1s [1s]
+  ANFIS-KMeans       macroF1=0.9878 acc=0.9965 F1_DoS=1.0000 rules=30 train=1.5s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9930 acc=0.9980 F1_DoS=1.0000 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=20 train=1.6s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=24 train=2.0s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=30 train=9.1s [10s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=10.1s [10s]
+  -> /home/sammj/scn/results/metrics_long.csv (3930 rows)
+== setting=A task=multi seed=4 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9985)
+  MLP                macroF1=0.9970 acc=0.9990 F1_DoS=0.9967 rules=nan train=1.7s [5s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9234)
+  FCM-clf            macroF1=0.9341 acc=0.9778 F1_DoS=0.9967 rules=20 train=4.4s [16s]
+  LDA                macroF1=0.8226 acc=0.9147 F1_DoS=0.9708 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9897)
+  LR                 macroF1=0.9926 acc=0.9978 F1_DoS=0.9967 rules=nan train=0.1s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9985)
+  LinSVM             macroF1=0.9916 acc=0.9975 F1_DoS=0.9967 rules=nan train=0.2s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9970)
+  RBF-SVM            macroF1=0.9964 acc=0.9985 F1_DoS=0.9901 rules=nan train=0.1s [1s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 1.0000)
+  RF                 macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9961 acc=0.9988 F1_DoS=0.9967 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9928 acc=0.9980 F1_DoS=1.0000 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=20 train=1.6s [2s]
+  ANFIS-SC+stk       macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=24 train=2.0s [2s]
+  ANFIS-FCM          macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=30 train=8.8s [10s]
+  ANFIS-FCM+stk      macroF1=1.0000 acc=1.0000 F1_DoS=1.0000 rules=40 train=9.5s [10s]
+  -> /home/sammj/scn/results/metrics_long.csv (4425 rows)
+== setting=A-noID task=binary seed=0 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9408)
+  MLP                macroF1=0.9513 acc=0.9772 F1_Attack=0.9158 rules=nan train=1.4s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8445)
+  FCM-clf            macroF1=0.9478 acc=0.9755 F1_Attack=0.9098 rules=30 train=4.2s [11s]
+  LDA                macroF1=0.7797 acc=0.8632 F1_Attack=0.6441 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8445)
+  LR                 macroF1=0.8569 acc=0.9220 F1_Attack=0.7604 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9363)
+  LinSVM             macroF1=0.9455 acc=0.9745 F1_Attack=0.9057 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9408)
+  RBF-SVM            macroF1=0.9485 acc=0.9760 F1_Attack=0.9108 rules=nan train=0.8s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 0.9864)
+  RF                 macroF1=0.9898 acc=0.9955 F1_Attack=0.9821 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9581 acc=0.9808 F1_Attack=0.9273 rules=20 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9825 acc=0.9922 F1_Attack=0.9693 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9506 acc=0.9770 F1_Attack=0.9145 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9848 acc=0.9932 F1_Attack=0.9734 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=0.9853 acc=0.9935 F1_Attack=0.9744 rules=42 train=1.3s [2s]
+  ANFIS-SC+stk       macroF1=0.9848 acc=0.9932 F1_Attack=0.9735 rules=48 train=1.8s [2s]
+  ANFIS-FCM          macroF1=0.9528 acc=0.9780 F1_Attack=0.9184 rules=20 train=4.2s [5s]
+  ANFIS-FCM+stk      macroF1=0.9748 acc=0.9888 F1_Attack=0.9561 rules=30 train=5.2s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (4815 rows)
+== setting=A-noID task=binary seed=1 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9542)
+  MLP                macroF1=0.9787 acc=0.9905 F1_Attack=0.9628 rules=nan train=2.3s [4s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9466)
+  FCM-clf            macroF1=0.9361 acc=0.9695 F1_Attack=0.8899 rules=30 train=4.2s [11s]
+  LDA                macroF1=0.7950 acc=0.8760 F1_Attack=0.6662 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8632)
+  LR                 macroF1=0.8946 acc=0.9460 F1_Attack=0.8209 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9468)
+  LinSVM             macroF1=0.9336 acc=0.9683 F1_Attack=0.8857 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9477)
+  RBF-SVM            macroF1=0.9354 acc=0.9692 F1_Attack=0.8887 rules=nan train=0.8s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9914)
+  RF                 macroF1=0.9847 acc=0.9932 F1_Attack=0.9733 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9398 acc=0.9715 F1_Attack=0.8962 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9732 acc=0.9880 F1_Attack=0.9533 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.9516 acc=0.9775 F1_Attack=0.9162 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9791 acc=0.9908 F1_Attack=0.9635 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=0.9809 acc=0.9915 F1_Attack=0.9667 rules=50 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=0.9809 acc=0.9915 F1_Attack=0.9667 rules=58 train=1.5s [2s]
+  ANFIS-FCM          macroF1=0.9444 acc=0.9738 F1_Attack=0.9039 rules=20 train=3.9s [6s]
+  ANFIS-FCM+stk      macroF1=0.9803 acc=0.9912 F1_Attack=0.9655 rules=30 train=5.7s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (5205 rows)
+== setting=A-noID task=binary seed=2 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9455)
+  MLP                macroF1=0.9503 acc=0.9768 F1_Attack=0.9140 rules=nan train=0.9s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9396)
+  FCM-clf            macroF1=0.9498 acc=0.9765 F1_Attack=0.9131 rules=30 train=4.3s [12s]
+  LDA                macroF1=0.7932 acc=0.8745 F1_Attack=0.6635 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8521)
+  LR                 macroF1=0.9073 acc=0.9535 F1_Attack=0.8418 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9376)
+  LinSVM             macroF1=0.9495 acc=0.9765 F1_Attack=0.9126 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9610)
+  RBF-SVM            macroF1=0.9562 acc=0.9798 F1_Attack=0.9241 rules=nan train=0.8s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9837)
+  RF                 macroF1=0.9926 acc=0.9968 F1_Attack=0.9870 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9654 acc=0.9842 F1_Attack=0.9398 rules=20 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9803 acc=0.9912 F1_Attack=0.9655 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9518 acc=0.9778 F1_Attack=0.9164 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9742 acc=0.9885 F1_Attack=0.9550 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9819 acc=0.9920 F1_Attack=0.9684 rules=44 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=0.9819 acc=0.9920 F1_Attack=0.9684 rules=50 train=1.6s [2s]
+  ANFIS-FCM          macroF1=0.9567 acc=0.9800 F1_Attack=0.9250 rules=20 train=4.0s [6s]
+  ANFIS-FCM+stk      macroF1=0.9808 acc=0.9915 F1_Attack=0.9664 rules=30 train=5.7s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (5595 rows)
+== setting=A-noID task=binary seed=3 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9462)
+  MLP                macroF1=0.9435 acc=0.9732 F1_Attack=0.9025 rules=nan train=0.9s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9445)
+  FCM-clf            macroF1=0.9415 acc=0.9722 F1_Attack=0.8992 rules=30 train=4.5s [12s]
+  LDA                macroF1=0.7908 acc=0.8725 F1_Attack=0.6600 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8467)
+  LR                 macroF1=0.9038 acc=0.9515 F1_Attack=0.8361 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9437)
+  LinSVM             macroF1=0.9410 acc=0.9720 F1_Attack=0.8982 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9463)
+  RBF-SVM            macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=nan train=0.9s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9893)
+  RF                 macroF1=0.9892 acc=0.9952 F1_Attack=0.9811 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9442 acc=0.9738 F1_Attack=0.9036 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9437 acc=0.9738 F1_Attack=0.9025 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9432 acc=0.9732 F1_Attack=0.9019 rules=20 train=0.8s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9787 acc=0.9905 F1_Attack=0.9627 rules=30 train=1.1s [1s]
+  ANFIS-SC           macroF1=0.9853 acc=0.9935 F1_Attack=0.9743 rules=46 train=1.2s [2s]
+  ANFIS-SC+stk       macroF1=0.9853 acc=0.9935 F1_Attack=0.9743 rules=52 train=1.7s [2s]
+  ANFIS-FCM          macroF1=0.9460 acc=0.9748 F1_Attack=0.9066 rules=20 train=4.1s [6s]
+  ANFIS-FCM+stk      macroF1=0.9830 acc=0.9925 F1_Attack=0.9703 rules=30 train=5.7s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (5985 rows)
+== setting=A-noID task=binary seed=4 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9837)
+  MLP                macroF1=0.9792 acc=0.9908 F1_Attack=0.9636 rules=nan train=2.1s [4s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9511)
+  FCM-clf            macroF1=0.9428 acc=0.9730 F1_Attack=0.9013 rules=30 train=4.4s [12s]
+  LDA                macroF1=0.7854 acc=0.8680 F1_Attack=0.6522 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8623)
+  LR                 macroF1=0.9086 acc=0.9543 F1_Attack=0.8440 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9541)
+  LinSVM             macroF1=0.9422 acc=0.9728 F1_Attack=0.9001 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9542)
+  RBF-SVM            macroF1=0.9416 acc=0.9725 F1_Attack=0.8991 rules=nan train=0.8s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9950)
+  RF                 macroF1=0.9914 acc=0.9962 F1_Attack=0.9849 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9764 acc=0.9895 F1_Attack=0.9589 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9770 acc=0.9898 F1_Attack=0.9598 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9813 acc=0.9918 F1_Attack=0.9674 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9824 acc=0.9922 F1_Attack=0.9693 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9864 acc=0.9940 F1_Attack=0.9761 rules=34 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=0.9864 acc=0.9940 F1_Attack=0.9761 rules=42 train=1.6s [2s]
+  ANFIS-FCM          macroF1=0.9496 acc=0.9765 F1_Attack=0.9128 rules=20 train=4.2s [6s]
+  ANFIS-FCM+stk      macroF1=0.9779 acc=0.9902 F1_Attack=0.9614 rules=30 train=6.0s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (6375 rows)
+== setting=A-noID task=multi seed=0 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9716)
+  MLP                macroF1=0.9849 acc=0.9935 F1_DoS=0.9583 rules=nan train=5.9s [15s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8810)
+  FCM-clf            macroF1=0.8996 acc=0.9698 F1_DoS=0.9385 rules=30 train=6.7s [18s]
+  LDA                macroF1=0.6887 acc=0.8277 F1_DoS=0.7989 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.7801)
+  LR                 macroF1=0.8565 acc=0.9470 F1_DoS=0.8717 rules=nan train=0.6s [2s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9177)
+  LinSVM             macroF1=0.9242 acc=0.9718 F1_DoS=0.8580 rules=nan train=0.4s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9235)
+  RBF-SVM            macroF1=0.9623 acc=0.9885 F1_DoS=0.9691 rules=nan train=3.7s [11s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 0.9889)
+  RF                 macroF1=0.9876 acc=0.9948 F1_DoS=0.9659 rules=nan train=0.8s [2s]
+  ANFIS-Random       macroF1=0.9369 acc=0.9740 F1_DoS=0.8730 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9695 acc=0.9898 F1_DoS=0.9708 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9617 acc=0.9825 F1_DoS=0.8952 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9900 acc=0.9958 F1_DoS=0.9724 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9843 acc=0.9932 F1_DoS=0.9568 rules=52 train=2.0s [3s]
+  ANFIS-SC+stk       macroF1=0.9894 acc=0.9955 F1_DoS=0.9708 rules=65 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9549 acc=0.9790 F1_DoS=0.8768 rules=30 train=9.1s [12s]
+  ANFIS-FCM+stk      macroF1=0.9900 acc=0.9958 F1_DoS=0.9724 rules=40 train=11.6s [12s]
+  -> /home/sammj/scn/results/metrics_long.csv (6870 rows)
+== setting=A-noID task=multi seed=1 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9831)
+  MLP                macroF1=0.9809 acc=0.9918 F1_DoS=0.9475 rules=nan train=4.1s [13s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8941)
+  FCM-clf            macroF1=0.8908 acc=0.9647 F1_DoS=0.9335 rules=30 train=6.6s [18s]
+  LDA                macroF1=0.6867 acc=0.8343 F1_DoS=0.7767 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8126)
+  LR                 macroF1=0.8541 acc=0.9453 F1_DoS=0.8430 rules=nan train=0.6s [2s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9256)
+  LinSVM             macroF1=0.9161 acc=0.9670 F1_DoS=0.8312 rules=nan train=0.2s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9474)
+  RBF-SVM            macroF1=0.9538 acc=0.9855 F1_DoS=0.9489 rules=nan train=3.6s [11s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 0.9887)
+  RF                 macroF1=0.9848 acc=0.9935 F1_DoS=0.9581 rules=nan train=0.8s [2s]
+  ANFIS-Random       macroF1=0.9379 acc=0.9715 F1_DoS=0.8454 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9625 acc=0.9868 F1_DoS=0.9551 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9515 acc=0.9775 F1_DoS=0.8701 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9818 acc=0.9928 F1_DoS=0.9597 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9804 acc=0.9915 F1_DoS=0.9460 rules=50 train=2.0s [3s]
+  ANFIS-SC+stk       macroF1=0.9830 acc=0.9930 F1_DoS=0.9582 rules=63 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9450 acc=0.9738 F1_DoS=0.8502 rules=30 train=8.9s [11s]
+  ANFIS-FCM+stk      macroF1=0.9704 acc=0.9892 F1_DoS=0.9567 rules=40 train=10.6s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (7365 rows)
+== setting=A-noID task=multi seed=2 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9805)
+  MLP                macroF1=0.9822 acc=0.9925 F1_DoS=0.9535 rules=nan train=4.7s [16s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8968)
+  FCM-clf            macroF1=0.8817 acc=0.9655 F1_DoS=0.8426 rules=30 train=6.6s [18s]
+  LDA                macroF1=0.6878 acc=0.8320 F1_DoS=0.7891 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8405)
+  LR                 macroF1=0.9016 acc=0.9663 F1_DoS=0.8684 rules=nan train=0.6s [2s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9273)
+  LinSVM             macroF1=0.9278 acc=0.9740 F1_DoS=0.8650 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9462)
+  RBF-SVM            macroF1=0.9477 acc=0.9850 F1_DoS=0.9410 rules=nan train=3.4s [10s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9833)
+  RF                 macroF1=0.9928 acc=0.9970 F1_DoS=0.9803 rules=nan train=0.7s [2s]
+  ANFIS-Random       macroF1=0.9614 acc=0.9838 F1_DoS=0.9033 rules=30 train=0.9s [1s]
+  ANFIS-Random+stk   macroF1=0.9756 acc=0.9920 F1_DoS=0.9706 rules=40 train=1.1s [1s]
+  ANFIS-KMeans       macroF1=0.9642 acc=0.9838 F1_DoS=0.9020 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9880 acc=0.9960 F1_DoS=0.9786 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9822 acc=0.9925 F1_DoS=0.9536 rules=49 train=2.1s [3s]
+  ANFIS-SC+stk       macroF1=0.9889 acc=0.9962 F1_DoS=0.9786 rules=63 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9609 acc=0.9828 F1_DoS=0.9003 rules=30 train=9.0s [11s]
+  ANFIS-FCM+stk      macroF1=0.9904 acc=0.9962 F1_DoS=0.9786 rules=40 train=11.4s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (7860 rows)
+== setting=A-noID task=multi seed=3 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9808)
+  MLP                macroF1=0.9829 acc=0.9930 F1_DoS=0.9579 rules=nan train=4.8s [15s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8921)
+  FCM-clf            macroF1=0.8843 acc=0.9627 F1_DoS=0.8201 rules=30 train=6.5s [17s]
+  LDA                macroF1=0.6734 acc=0.8243 F1_DoS=0.7618 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.7898)
+  LR                 macroF1=0.8497 acc=0.9443 F1_DoS=0.8421 rules=nan train=0.5s [2s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9251)
+  LinSVM             macroF1=0.9151 acc=0.9683 F1_DoS=0.8371 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9361)
+  RBF-SVM            macroF1=0.9440 acc=0.9815 F1_DoS=0.9178 rules=nan train=3.2s [10s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 0.9882)
+  RF                 macroF1=0.9881 acc=0.9950 F1_DoS=0.9672 rules=nan train=0.8s [2s]
+  ANFIS-Random       macroF1=0.9374 acc=0.9722 F1_DoS=0.8559 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9515 acc=0.9840 F1_DoS=0.9610 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9572 acc=0.9802 F1_DoS=0.8830 rules=30 train=1.5s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9882 acc=0.9950 F1_DoS=0.9673 rules=40 train=1.9s [2s]
+  ANFIS-SC           macroF1=0.9853 acc=0.9938 F1_DoS=0.9596 rules=49 train=2.0s [3s]
+  ANFIS-SC+stk       macroF1=0.9875 acc=0.9950 F1_DoS=0.9705 rules=63 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9498 acc=0.9765 F1_DoS=0.8630 rules=30 train=8.9s [10s]
+  ANFIS-FCM+stk      macroF1=0.9838 acc=0.9935 F1_DoS=0.9626 rules=40 train=10.4s [10s]
+  -> /home/sammj/scn/results/metrics_long.csv (8355 rows)
+== setting=A-noID task=multi seed=4 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9926)
+  MLP                macroF1=0.9811 acc=0.9928 F1_DoS=0.9550 rules=nan train=4.6s [14s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9062)
+  FCM-clf            macroF1=0.8628 acc=0.9587 F1_DoS=0.8178 rules=30 train=6.6s [18s]
+  LDA                macroF1=0.6712 acc=0.8207 F1_DoS=0.7635 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8047)
+  LR                 macroF1=0.8485 acc=0.9450 F1_DoS=0.8543 rules=nan train=0.7s [2s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9443)
+  LinSVM             macroF1=0.9240 acc=0.9712 F1_DoS=0.8474 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9305)
+  RBF-SVM            macroF1=0.9126 acc=0.9688 F1_DoS=0.8571 rules=nan train=2.6s [9s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 0.9918)
+  RF                 macroF1=0.9898 acc=0.9958 F1_DoS=0.9718 rules=nan train=0.7s [3s]
+  ANFIS-Random       macroF1=0.9578 acc=0.9815 F1_DoS=0.8889 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9702 acc=0.9908 F1_DoS=0.9687 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9644 acc=0.9840 F1_DoS=0.9024 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9873 acc=0.9952 F1_DoS=0.9722 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9839 acc=0.9932 F1_DoS=0.9581 rules=48 train=1.9s [2s]
+  ANFIS-SC+stk       macroF1=0.9819 acc=0.9942 F1_DoS=0.9785 rules=61 train=2.4s [2s]
+  ANFIS-FCM          macroF1=0.9517 acc=0.9775 F1_DoS=0.8680 rules=30 train=8.4s [10s]
+  ANFIS-FCM+stk      macroF1=0.9891 acc=0.9960 F1_DoS=0.9770 rules=40 train=10.0s [10s]
+  -> /home/sammj/scn/results/metrics_long.csv (8850 rows)
+== setting=B task=binary seed=0 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9450)
+  MLP                macroF1=0.8461 acc=0.9147 F1_Attack=0.7434 rules=nan train=0.5s [2s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9428)
+  FCM-clf            macroF1=0.9457 acc=0.9745 F1_Attack=0.9061 rules=30 train=4.3s [11s]
+  LDA                macroF1=0.7989 acc=0.8795 F1_Attack=0.6717 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9435)
+  LR                 macroF1=0.9453 acc=0.9742 F1_Attack=0.9054 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 1} (val macro-F1 0.9451)
+  LinSVM             macroF1=0.9428 acc=0.9730 F1_Attack=0.9013 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9440)
+  RBF-SVM            macroF1=0.9471 acc=0.9752 F1_Attack=0.9086 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9478)
+  RF                 macroF1=0.9437 acc=0.9742 F1_Attack=0.9022 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9448 acc=0.9740 F1_Attack=0.9046 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9464 acc=0.9748 F1_Attack=0.9074 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9489 acc=0.9760 F1_Attack=0.9116 rules=46 train=1.0s [1s]
+  ANFIS-SC+stk       macroF1=0.9482 acc=0.9758 F1_Attack=0.9104 rules=53 train=1.4s [1s]
+  ANFIS-FCM          macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=20 train=3.7s [5s]
+  ANFIS-FCM+stk      macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=30 train=4.8s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (9240 rows)
+== setting=B task=binary seed=1 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9468)
+  MLP                macroF1=0.8471 acc=0.9153 F1_Attack=0.7449 rules=nan train=0.4s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9461)
+  FCM-clf            macroF1=0.9493 acc=0.9765 F1_Attack=0.9121 rules=30 train=4.4s [11s]
+  LDA                macroF1=0.8010 acc=0.8810 F1_Attack=0.6749 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9468)
+  LR                 macroF1=0.9500 acc=0.9768 F1_Attack=0.9133 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 1} (val macro-F1 0.9469)
+  LinSVM             macroF1=0.9523 acc=0.9778 F1_Attack=0.9174 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9461)
+  RBF-SVM            macroF1=0.9487 acc=0.9762 F1_Attack=0.9111 rules=nan train=1.1s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9398)
+  RF                 macroF1=0.9422 acc=0.9738 F1_Attack=0.8995 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9517 acc=0.9775 F1_Attack=0.9164 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9516 acc=0.9775 F1_Attack=0.9162 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.9522 acc=0.9778 F1_Attack=0.9172 rules=20 train=0.8s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9528 acc=0.9780 F1_Attack=0.9184 rules=30 train=1.1s [1s]
+  ANFIS-SC           macroF1=0.9518 acc=0.9775 F1_Attack=0.9165 rules=36 train=1.4s [2s]
+  ANFIS-SC+stk       macroF1=0.9506 acc=0.9770 F1_Attack=0.9145 rules=43 train=1.8s [2s]
+  ANFIS-FCM          macroF1=0.9523 acc=0.9778 F1_Attack=0.9175 rules=20 train=4.1s [5s]
+  ANFIS-FCM+stk      macroF1=0.9523 acc=0.9778 F1_Attack=0.9175 rules=30 train=5.2s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (9630 rows)
+== setting=B task=binary seed=2 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9494)
+  MLP                macroF1=0.9386 acc=0.9708 F1_Attack=0.8941 rules=nan train=0.7s [2s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9486)
+  FCM-clf            macroF1=0.9395 acc=0.9712 F1_Attack=0.8957 rules=30 train=4.3s [11s]
+  LDA                macroF1=0.7863 acc=0.8690 F1_Attack=0.6534 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9500)
+  LR                 macroF1=0.9400 acc=0.9715 F1_Attack=0.8966 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 1} (val macro-F1 0.9487)
+  LinSVM             macroF1=0.9381 acc=0.9705 F1_Attack=0.8933 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9498)
+  RBF-SVM            macroF1=0.9405 acc=0.9718 F1_Attack=0.8974 rules=nan train=1.2s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9437)
+  RF                 macroF1=0.9402 acc=0.9722 F1_Attack=0.8964 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9375 acc=0.9702 F1_Attack=0.8923 rules=20 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9387 acc=0.9708 F1_Attack=0.8943 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9351 acc=0.9690 F1_Attack=0.8883 rules=20 train=0.8s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9387 acc=0.9708 F1_Attack=0.8943 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=0.9386 acc=0.9708 F1_Attack=0.8941 rules=46 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=0.9391 acc=0.9710 F1_Attack=0.8949 rules=53 train=1.5s [2s]
+  ANFIS-FCM          macroF1=0.9387 acc=0.9708 F1_Attack=0.8943 rules=20 train=3.8s [5s]
+  ANFIS-FCM+stk      macroF1=0.9387 acc=0.9708 F1_Attack=0.8943 rules=30 train=5.4s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (10020 rows)
+== setting=B task=binary seed=3 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9442)
+  MLP                macroF1=0.9478 acc=0.9755 F1_Attack=0.9098 rules=nan train=0.9s [3s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.8409)
+  FCM-clf            macroF1=0.8424 acc=0.9120 F1_Attack=0.7377 rules=10 train=1.8s [9s]
+  LDA                macroF1=0.7941 acc=0.8752 F1_Attack=0.6649 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9442)
+  LR                 macroF1=0.9478 acc=0.9755 F1_Attack=0.9098 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9443)
+  LinSVM             macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9435)
+  RBF-SVM            macroF1=0.9483 acc=0.9758 F1_Attack=0.9106 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9402)
+  RF                 macroF1=0.9479 acc=0.9760 F1_Attack=0.9096 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9473 acc=0.9752 F1_Attack=0.9089 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9473 acc=0.9752 F1_Attack=0.9089 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=0.9488 acc=0.9760 F1_Attack=0.9114 rules=40 train=1.2s [2s]
+  ANFIS-SC+stk       macroF1=0.9476 acc=0.9755 F1_Attack=0.9094 rules=47 train=1.6s [2s]
+  ANFIS-FCM          macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=20 train=3.9s [6s]
+  ANFIS-FCM+stk      macroF1=0.9473 acc=0.9752 F1_Attack=0.9089 rules=30 train=5.5s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (10410 rows)
+== setting=B task=binary seed=4 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9413)
+  MLP                macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=nan train=0.9s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9406)
+  FCM-clf            macroF1=0.9398 acc=0.9715 F1_Attack=0.8962 rules=30 train=4.5s [12s]
+  LDA                macroF1=0.7992 acc=0.8798 F1_Attack=0.6721 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9406)
+  LR                 macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9406)
+  LinSVM             macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9398)
+  RBF-SVM            macroF1=0.9396 acc=0.9715 F1_Attack=0.8958 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9345)
+  RF                 macroF1=0.9333 acc=0.9692 F1_Attack=0.8843 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9395 acc=0.9712 F1_Attack=0.8957 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9419 acc=0.9725 F1_Attack=0.8998 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9366 acc=0.9698 F1_Attack=0.8907 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9415 acc=0.9722 F1_Attack=0.8990 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9403 acc=0.9718 F1_Attack=0.8970 rules=30 train=1.0s [1s]
+  ANFIS-SC+stk       macroF1=0.9397 acc=0.9715 F1_Attack=0.8960 rules=37 train=1.4s [1s]
+  ANFIS-FCM          macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=20 train=4.1s [6s]
+  ANFIS-FCM+stk      macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=30 train=5.7s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (10800 rows)
+== setting=B task=multi seed=0 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9200)
+  MLP                macroF1=0.9275 acc=0.9752 F1_DoS=1.0000 rules=nan train=5.2s [14s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.8770)
+  FCM-clf            macroF1=0.8524 acc=0.9430 F1_DoS=0.9644 rules=20 train=4.5s [15s]
+  LDA                macroF1=0.7190 acc=0.8370 F1_DoS=0.9044 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8988)
+  LR                 macroF1=0.9042 acc=0.9698 F1_DoS=0.9724 rules=nan train=0.3s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9017)
+  LinSVM             macroF1=0.9022 acc=0.9688 F1_DoS=0.9755 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9033)
+  RBF-SVM            macroF1=0.9156 acc=0.9732 F1_DoS=0.9819 rules=nan train=2.7s [8s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9161)
+  RF                 macroF1=0.9258 acc=0.9755 F1_DoS=1.0000 rules=nan train=0.8s [3s]
+  ANFIS-Random       macroF1=0.9269 acc=0.9750 F1_DoS=1.0000 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9263 acc=0.9748 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=53 train=2.0s [2s]
+  ANFIS-SC+stk       macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=67 train=2.4s [2s]
+  ANFIS-FCM          macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=8.8s [11s]
+  ANFIS-FCM+stk      macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=11.3s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (11295 rows)
+== setting=B task=multi seed=1 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9253)
+  MLP                macroF1=0.9299 acc=0.9770 F1_DoS=0.9950 rules=nan train=4.8s [15s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8925)
+  FCM-clf            macroF1=0.9085 acc=0.9722 F1_DoS=0.9575 rules=30 train=6.7s [18s]
+  LDA                macroF1=0.7197 acc=0.8387 F1_DoS=0.9018 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9070)
+  LR                 macroF1=0.9069 acc=0.9722 F1_DoS=0.9551 rules=nan train=0.3s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9022)
+  LinSVM             macroF1=0.9095 acc=0.9715 F1_DoS=0.9628 rules=nan train=0.2s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9198)
+  RBF-SVM            macroF1=0.9173 acc=0.9742 F1_DoS=0.9787 rules=nan train=2.7s [9s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9209)
+  RF                 macroF1=0.9171 acc=0.9735 F1_DoS=1.0000 rules=nan train=0.8s [3s]
+  ANFIS-Random       macroF1=0.9322 acc=0.9770 F1_DoS=0.9950 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9317 acc=0.9770 F1_DoS=0.9983 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=55 train=2.2s [3s]
+  ANFIS-SC+stk       macroF1=0.9326 acc=0.9775 F1_DoS=1.0000 rules=69 train=2.6s [3s]
+  ANFIS-FCM          macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=30 train=8.7s [11s]
+  ANFIS-FCM+stk      macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=40 train=10.6s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (11790 rows)
+== setting=B task=multi seed=2 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9275)
+  MLP                macroF1=0.9169 acc=0.9705 F1_DoS=1.0000 rules=nan train=6.0s [14s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9028)
+  FCM-clf            macroF1=0.7719 acc=0.8938 F1_DoS=0.9204 rules=20 train=4.6s [15s]
+  LDA                macroF1=0.7172 acc=0.8265 F1_DoS=0.9109 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8963)
+  LR                 macroF1=0.8926 acc=0.9660 F1_DoS=0.9444 rules=nan train=0.3s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9080)
+  LinSVM             macroF1=0.8979 acc=0.9670 F1_DoS=0.9630 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9120)
+  RBF-SVM            macroF1=0.9050 acc=0.9690 F1_DoS=0.9706 rules=nan train=2.5s [8s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9144)
+  RF                 macroF1=0.9154 acc=0.9712 F1_DoS=1.0000 rules=nan train=0.7s [3s]
+  ANFIS-Random       macroF1=0.9183 acc=0.9710 F1_DoS=1.0000 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9183 acc=0.9710 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9172 acc=0.9705 F1_DoS=1.0000 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9169 acc=0.9705 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=0.9183 acc=0.9710 F1_DoS=1.0000 rules=55 train=2.1s [3s]
+  ANFIS-SC+stk       macroF1=0.9180 acc=0.9710 F1_DoS=1.0000 rules=68 train=2.6s [3s]
+  ANFIS-FCM          macroF1=0.9183 acc=0.9710 F1_DoS=1.0000 rules=30 train=8.6s [11s]
+  ANFIS-FCM+stk      macroF1=0.9174 acc=0.9708 F1_DoS=1.0000 rules=40 train=11.0s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (12285 rows)
+== setting=B task=multi seed=3 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9195)
+  MLP                macroF1=0.9275 acc=0.9752 F1_DoS=1.0000 rules=nan train=4.1s [14s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8588)
+  FCM-clf            macroF1=0.7752 acc=0.8892 F1_DoS=0.9416 rules=30 train=6.5s [18s]
+  LDA                macroF1=0.7101 acc=0.8305 F1_DoS=0.8925 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.8877)
+  LR                 macroF1=0.8997 acc=0.9698 F1_DoS=0.9564 rules=nan train=0.4s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.8856)
+  LinSVM             macroF1=0.8957 acc=0.9680 F1_DoS=0.9582 rules=nan train=0.2s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9048)
+  RBF-SVM            macroF1=0.9126 acc=0.9725 F1_DoS=0.9737 rules=nan train=2.7s [8s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9136)
+  RF                 macroF1=0.9267 acc=0.9755 F1_DoS=1.0000 rules=nan train=0.7s [2s]
+  ANFIS-Random       macroF1=0.9280 acc=0.9752 F1_DoS=0.9983 rules=30 train=0.7s [1s]
+  ANFIS-Random+stk   macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=0.9s [1s]
+  ANFIS-KMeans       macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=1.2s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9286 acc=0.9755 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=52 train=2.0s [3s]
+  ANFIS-SC+stk       macroF1=0.9281 acc=0.9755 F1_DoS=0.9983 rules=67 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9286 acc=0.9755 F1_DoS=0.9983 rules=30 train=8.6s [11s]
+  ANFIS-FCM+stk      macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=11.2s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (12780 rows)
+== setting=B task=multi seed=4 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9199)
+  MLP                macroF1=0.9188 acc=0.9718 F1_DoS=0.9983 rules=nan train=3.5s [11s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.8730)
+  FCM-clf            macroF1=0.8678 acc=0.9613 F1_DoS=0.9246 rules=20 train=4.6s [15s]
+  LDA                macroF1=0.7082 acc=0.8243 F1_DoS=0.8960 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9102)
+  LR                 macroF1=0.9019 acc=0.9683 F1_DoS=0.9735 rules=nan train=0.4s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9136)
+  LinSVM             macroF1=0.9035 acc=0.9680 F1_DoS=0.9803 rules=nan train=0.4s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9130)
+  RBF-SVM            macroF1=0.9050 acc=0.9690 F1_DoS=0.9784 rules=nan train=2.7s [9s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9156)
+  RF                 macroF1=0.9102 acc=0.9700 F1_DoS=1.0000 rules=nan train=0.8s [3s]
+  ANFIS-Random       macroF1=0.9104 acc=0.9690 F1_DoS=0.9916 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9141 acc=0.9698 F1_DoS=0.9983 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9199 acc=0.9718 F1_DoS=0.9966 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9205 acc=0.9720 F1_DoS=1.0000 rules=40 train=1.7s [2s]
+  ANFIS-SC           macroF1=0.9208 acc=0.9722 F1_DoS=1.0000 rules=51 train=1.9s [2s]
+  ANFIS-SC+stk       macroF1=0.9199 acc=0.9720 F1_DoS=0.9983 rules=63 train=2.3s [2s]
+  ANFIS-FCM          macroF1=0.9193 acc=0.9718 F1_DoS=0.9983 rules=30 train=8.8s [11s]
+  ANFIS-FCM+stk      macroF1=0.9188 acc=0.9718 F1_DoS=0.9983 rules=40 train=11.2s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (13275 rows)
+== setting=B-ID task=binary seed=0 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9457)
+  MLP                macroF1=0.9469 acc=0.9750 F1_Attack=0.9083 rules=nan train=1.2s [3s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9160)
+  FCM-clf            macroF1=0.9073 acc=0.9535 F1_Attack=0.8418 rules=20 train=3.1s [11s]
+  LDA                macroF1=0.8435 acc=0.9127 F1_Attack=0.7394 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9426)
+  LR                 macroF1=0.9454 acc=0.9742 F1_Attack=0.9058 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 1} (val macro-F1 0.9420)
+  LinSVM             macroF1=0.9440 acc=0.9735 F1_Attack=0.9033 rules=nan train=0.0s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9445)
+  RBF-SVM            macroF1=0.9474 acc=0.9752 F1_Attack=0.9091 rules=nan train=0.9s [2s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9452)
+  RF                 macroF1=0.9461 acc=0.9752 F1_Attack=0.9065 rules=nan train=0.7s [2s]
+  ANFIS-Random       macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=30 train=0.6s [1s]
+  ANFIS-KMeans       macroF1=0.9457 acc=0.9745 F1_Attack=0.9062 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9457 acc=0.9745 F1_Attack=0.9062 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=24 train=1.2s [2s]
+  ANFIS-SC+stk       macroF1=0.9466 acc=0.9750 F1_Attack=0.9076 rules=31 train=1.6s [2s]
+  ANFIS-FCM          macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=20 train=4.0s [5s]
+  ANFIS-FCM+stk      macroF1=0.9472 acc=0.9752 F1_Attack=0.9088 rules=30 train=4.9s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (13665 rows)
+== setting=B-ID task=binary seed=1 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9475)
+  MLP                macroF1=0.9523 acc=0.9778 F1_Attack=0.9175 rules=nan train=1.4s [4s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.8981)
+  FCM-clf            macroF1=0.9103 acc=0.9553 F1_Attack=0.8469 rules=20 train=3.0s [10s]
+  LDA                macroF1=0.8456 acc=0.9143 F1_Attack=0.7427 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9402)
+  LR                 macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9414)
+  LinSVM             macroF1=0.9498 acc=0.9765 F1_Attack=0.9133 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9457)
+  RBF-SVM            macroF1=0.9508 acc=0.9770 F1_Attack=0.9150 rules=nan train=0.9s [2s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9401)
+  RF                 macroF1=0.9411 acc=0.9732 F1_Attack=0.8976 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9517 acc=0.9775 F1_Attack=0.9164 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9518 acc=0.9775 F1_Attack=0.9165 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.9511 acc=0.9772 F1_Attack=0.9153 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9517 acc=0.9775 F1_Attack=0.9164 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9504 acc=0.9770 F1_Attack=0.9142 rules=20 train=1.0s [1s]
+  ANFIS-SC+stk       macroF1=0.9504 acc=0.9770 F1_Attack=0.9140 rules=28 train=1.4s [1s]
+  ANFIS-FCM          macroF1=0.9523 acc=0.9778 F1_Attack=0.9175 rules=20 train=4.0s [6s]
+  ANFIS-FCM+stk      macroF1=0.9523 acc=0.9778 F1_Attack=0.9175 rules=30 train=5.8s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (14055 rows)
+== setting=B-ID task=binary seed=2 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9463)
+  MLP                macroF1=0.9377 acc=0.9702 F1_Attack=0.8927 rules=nan train=1.0s [3s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.9077)
+  FCM-clf            macroF1=0.9060 acc=0.9527 F1_Attack=0.8397 rules=30 train=4.6s [13s]
+  LDA                macroF1=0.8282 acc=0.9018 F1_Attack=0.7158 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9463)
+  LR                 macroF1=0.9377 acc=0.9702 F1_Attack=0.8927 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9469)
+  LinSVM             macroF1=0.9374 acc=0.9702 F1_Attack=0.8921 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9475)
+  RBF-SVM            macroF1=0.9387 acc=0.9708 F1_Attack=0.8943 rules=nan train=0.9s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9437)
+  RF                 macroF1=0.9384 acc=0.9712 F1_Attack=0.8934 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9391 acc=0.9710 F1_Attack=0.8951 rules=20 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9391 acc=0.9710 F1_Attack=0.8951 rules=30 train=0.7s [1s]
+  ANFIS-KMeans       macroF1=0.9381 acc=0.9705 F1_Attack=0.8933 rules=20 train=0.8s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9381 acc=0.9705 F1_Attack=0.8933 rules=30 train=1.1s [1s]
+  ANFIS-SC           macroF1=0.9386 acc=0.9708 F1_Attack=0.8941 rules=20 train=1.2s [2s]
+  ANFIS-SC+stk       macroF1=0.9386 acc=0.9708 F1_Attack=0.8941 rules=26 train=1.5s [2s]
+  ANFIS-FCM          macroF1=0.9386 acc=0.9708 F1_Attack=0.8941 rules=20 train=3.9s [6s]
+  ANFIS-FCM+stk      macroF1=0.9386 acc=0.9708 F1_Attack=0.8941 rules=30 train=5.5s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (14445 rows)
+== setting=B-ID task=binary seed=3 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9445)
+  MLP                macroF1=0.9474 acc=0.9752 F1_Attack=0.9091 rules=nan train=1.0s [3s]
+    tuned FCM-clf: {'k': 20, 'm': 2.0} (val macro-F1 0.9072)
+  FCM-clf            macroF1=0.9090 acc=0.9545 F1_Attack=0.8447 rules=20 train=3.1s [10s]
+  LDA                macroF1=0.8410 acc=0.9110 F1_Attack=0.7355 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9420)
+  LR                 macroF1=0.9445 acc=0.9738 F1_Attack=0.9041 rules=nan train=0.0s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9438)
+  LinSVM             macroF1=0.9459 acc=0.9745 F1_Attack=0.9066 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9451)
+  RBF-SVM            macroF1=0.9474 acc=0.9752 F1_Attack=0.9091 rules=nan train=0.9s [2s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9403)
+  RF                 macroF1=0.9471 acc=0.9755 F1_Attack=0.9082 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.9478 acc=0.9755 F1_Attack=0.9098 rules=20 train=0.6s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=30 train=1.0s [1s]
+  ANFIS-SC           macroF1=0.9489 acc=0.9760 F1_Attack=0.9116 rules=22 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=0.9489 acc=0.9760 F1_Attack=0.9116 rules=29 train=1.5s [2s]
+  ANFIS-FCM          macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=20 train=4.0s [5s]
+  ANFIS-FCM+stk      macroF1=0.9484 acc=0.9758 F1_Attack=0.9108 rules=30 train=5.1s [5s]
+  -> /home/sammj/scn/results/metrics_long.csv (14835 rows)
+== setting=B-ID task=binary seed=4 variant=main (train [1981, 14019], test [495, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9396)
+  MLP                macroF1=0.9387 acc=0.9708 F1_Attack=0.8943 rules=nan train=0.9s [2s]
+    tuned FCM-clf: {'k': 10, 'm': 2.0} (val macro-F1 0.9013)
+  FCM-clf            macroF1=0.9009 acc=0.9497 F1_Attack=0.8312 rules=10 train=1.7s [9s]
+  LDA                macroF1=0.8351 acc=0.9067 F1_Attack=0.7263 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9390)
+  LR                 macroF1=0.9358 acc=0.9692 F1_Attack=0.8895 rules=nan train=0.1s [0s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9399)
+  LinSVM             macroF1=0.9384 acc=0.9708 F1_Attack=0.8937 rules=nan train=0.1s [0s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9414)
+  RBF-SVM            macroF1=0.9411 acc=0.9720 F1_Attack=0.8984 rules=nan train=0.9s [2s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9375)
+  RF                 macroF1=0.9322 acc=0.9688 F1_Attack=0.8824 rules=nan train=0.6s [2s]
+  ANFIS-Random       macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=20 train=0.4s [1s]
+  ANFIS-Random+stk   macroF1=0.9409 acc=0.9720 F1_Attack=0.8980 rules=30 train=0.5s [1s]
+  ANFIS-KMeans       macroF1=0.8896 acc=0.9430 F1_Attack=0.8128 rules=20 train=0.7s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9390 acc=0.9710 F1_Attack=0.8947 rules=30 train=0.9s [1s]
+  ANFIS-SC           macroF1=0.9400 acc=0.9715 F1_Attack=0.8966 rules=14 train=1.1s [2s]
+  ANFIS-SC+stk       macroF1=0.9415 acc=0.9722 F1_Attack=0.8990 rules=21 train=1.5s [2s]
+  ANFIS-FCM          macroF1=0.9414 acc=0.9722 F1_Attack=0.8988 rules=20 train=4.0s [6s]
+  ANFIS-FCM+stk      macroF1=0.9410 acc=0.9720 F1_Attack=0.8982 rules=30 train=5.8s [6s]
+  -> /home/sammj/scn/results/metrics_long.csv (15225 rows)
+== setting=B-ID task=multi seed=0 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9217)
+  MLP                macroF1=0.9286 acc=0.9755 F1_DoS=1.0000 rules=nan train=1.7s [6s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8887)
+  FCM-clf            macroF1=0.8832 acc=0.9533 F1_DoS=1.0000 rules=30 train=6.9s [18s]
+  LDA                macroF1=0.7771 acc=0.8942 F1_DoS=0.9367 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9175)
+  LR                 macroF1=0.9251 acc=0.9740 F1_DoS=1.0000 rules=nan train=0.2s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9178)
+  LinSVM             macroF1=0.9248 acc=0.9740 F1_DoS=1.0000 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9202)
+  RBF-SVM            macroF1=0.9280 acc=0.9752 F1_DoS=0.9967 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9150)
+  RF                 macroF1=0.9261 acc=0.9755 F1_DoS=1.0000 rules=nan train=0.7s [2s]
+  ANFIS-Random       macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9283 acc=0.9755 F1_DoS=1.0000 rules=30 train=1.3s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9283 acc=0.9755 F1_DoS=1.0000 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=39 train=2.0s [3s]
+  ANFIS-SC+stk       macroF1=0.9275 acc=0.9752 F1_DoS=1.0000 rules=49 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=9.0s [11s]
+  ANFIS-FCM+stk      macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=11.3s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (15720 rows)
+== setting=B-ID task=multi seed=1 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9282)
+  MLP                macroF1=0.9334 acc=0.9775 F1_DoS=1.0000 rules=nan train=1.4s [6s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8744)
+  FCM-clf            macroF1=0.8863 acc=0.9550 F1_DoS=1.0000 rules=30 train=6.6s [18s]
+  LDA                macroF1=0.7773 acc=0.8960 F1_DoS=0.9316 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9210)
+  LR                 macroF1=0.9280 acc=0.9752 F1_DoS=1.0000 rules=nan train=0.3s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9148)
+  LinSVM             macroF1=0.9307 acc=0.9765 F1_DoS=1.0000 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9260)
+  RBF-SVM            macroF1=0.9322 acc=0.9770 F1_DoS=0.9950 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9209)
+  RF                 macroF1=0.9190 acc=0.9740 F1_DoS=1.0000 rules=nan train=0.8s [3s]
+  ANFIS-Random       macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=30 train=0.9s [1s]
+  ANFIS-Random+stk   macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=40 train=1.1s [1s]
+  ANFIS-KMeans       macroF1=0.9347 acc=0.9780 F1_DoS=1.0000 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9340 acc=0.9778 F1_DoS=1.0000 rules=45 train=2.0s [3s]
+  ANFIS-SC+stk       macroF1=0.9329 acc=0.9775 F1_DoS=1.0000 rules=54 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9326 acc=0.9772 F1_DoS=1.0000 rules=30 train=8.8s [11s]
+  ANFIS-FCM+stk      macroF1=0.9334 acc=0.9775 F1_DoS=1.0000 rules=40 train=11.4s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (16215 rows)
+== setting=B-ID task=multi seed=2 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9239)
+  MLP                macroF1=0.9177 acc=0.9708 F1_DoS=1.0000 rules=nan train=1.9s [5s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8847)
+  FCM-clf            macroF1=0.8819 acc=0.9525 F1_DoS=1.0000 rules=30 train=6.8s [18s]
+  LDA                macroF1=0.7781 acc=0.8878 F1_DoS=0.9448 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9231)
+  LR                 macroF1=0.9166 acc=0.9702 F1_DoS=1.0000 rules=nan train=0.2s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9235)
+  LinSVM             macroF1=0.9156 acc=0.9702 F1_DoS=0.9983 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9260)
+  RBF-SVM            macroF1=0.9177 acc=0.9708 F1_DoS=1.0000 rules=nan train=0.9s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': None} (val macro-F1 0.9146)
+  RF                 macroF1=0.9146 acc=0.9718 F1_DoS=1.0000 rules=nan train=0.7s [2s]
+  ANFIS-Random       macroF1=0.9177 acc=0.9708 F1_DoS=1.0000 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9174 acc=0.9708 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9177 acc=0.9708 F1_DoS=1.0000 rules=30 train=1.5s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9169 acc=0.9705 F1_DoS=1.0000 rules=40 train=1.9s [2s]
+  ANFIS-SC           macroF1=0.9174 acc=0.9708 F1_DoS=1.0000 rules=43 train=2.1s [3s]
+  ANFIS-SC+stk       macroF1=0.9180 acc=0.9710 F1_DoS=1.0000 rules=52 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9165 acc=0.9702 F1_DoS=0.9967 rules=30 train=9.1s [11s]
+  ANFIS-FCM+stk      macroF1=0.9177 acc=0.9708 F1_DoS=1.0000 rules=40 train=11.0s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (16710 rows)
+== setting=B-ID task=multi seed=3 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9203)
+  MLP                macroF1=0.9286 acc=0.9755 F1_DoS=1.0000 rules=nan train=1.6s [6s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8776)
+  FCM-clf            macroF1=0.8821 acc=0.9535 F1_DoS=0.9950 rules=30 train=6.6s [18s]
+  LDA                macroF1=0.7706 acc=0.8908 F1_DoS=0.9285 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9148)
+  LR                 macroF1=0.9239 acc=0.9735 F1_DoS=1.0000 rules=nan train=0.3s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9116)
+  LinSVM             macroF1=0.9242 acc=0.9740 F1_DoS=0.9967 rules=nan train=0.4s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9165)
+  RBF-SVM            macroF1=0.9274 acc=0.9750 F1_DoS=0.9950 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9151)
+  RF                 macroF1=0.9267 acc=0.9755 F1_DoS=1.0000 rules=nan train=0.8s [2s]
+  ANFIS-Random       macroF1=0.9298 acc=0.9760 F1_DoS=1.0000 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9298 acc=0.9760 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=1.5s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=42 train=2.2s [3s]
+  ANFIS-SC+stk       macroF1=0.9283 acc=0.9755 F1_DoS=1.0000 rules=50 train=2.7s [3s]
+  ANFIS-FCM          macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=30 train=8.8s [12s]
+  ANFIS-FCM+stk      macroF1=0.9292 acc=0.9758 F1_DoS=1.0000 rules=40 train=11.6s [12s]
+  -> /home/sammj/scn/results/metrics_long.csv (17205 rows)
+== setting=B-ID task=multi seed=4 variant=main (train [1198, 783, 14019], test [299, 196, 3505])
+    tuned MLP: {'hidden': [64, 32], 'lr': 0.001, 'max_epochs': 50} (val macro-F1 0.9221)
+  MLP                macroF1=0.9216 acc=0.9725 F1_DoS=1.0000 rules=nan train=2.1s [7s]
+    tuned FCM-clf: {'k': 30, 'm': 2.0} (val macro-F1 0.8804)
+  FCM-clf            macroF1=0.8780 acc=0.9503 F1_DoS=1.0000 rules=30 train=6.8s [18s]
+  LDA                macroF1=0.7724 acc=0.8865 F1_DoS=0.9433 rules=nan train=0.0s [0s]
+    tuned LR: {'C': 10} (val macro-F1 0.9192)
+  LR                 macroF1=0.9134 acc=0.9688 F1_DoS=1.0000 rules=nan train=0.3s [1s]
+    tuned LinSVM: {'C': 10} (val macro-F1 0.9195)
+  LinSVM             macroF1=0.9146 acc=0.9698 F1_DoS=1.0000 rules=nan train=0.3s [1s]
+    tuned RBF-SVM: {'C': 10} (val macro-F1 0.9213)
+  RBF-SVM            macroF1=0.9186 acc=0.9712 F1_DoS=0.9917 rules=nan train=1.0s [3s]
+    tuned RF: {'n_estimators': 200, 'max_depth': 20} (val macro-F1 0.9168)
+  RF                 macroF1=0.9102 acc=0.9700 F1_DoS=1.0000 rules=nan train=0.9s [3s]
+  ANFIS-Random       macroF1=0.9216 acc=0.9725 F1_DoS=1.0000 rules=30 train=0.8s [1s]
+  ANFIS-Random+stk   macroF1=0.9214 acc=0.9725 F1_DoS=1.0000 rules=40 train=1.0s [1s]
+  ANFIS-KMeans       macroF1=0.9216 acc=0.9725 F1_DoS=1.0000 rules=30 train=1.4s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9205 acc=0.9722 F1_DoS=1.0000 rules=40 train=1.8s [2s]
+  ANFIS-SC           macroF1=0.9208 acc=0.9722 F1_DoS=1.0000 rules=41 train=1.9s [2s]
+  ANFIS-SC+stk       macroF1=0.9191 acc=0.9718 F1_DoS=1.0000 rules=50 train=2.4s [2s]
+  ANFIS-FCM          macroF1=0.9211 acc=0.9722 F1_DoS=1.0000 rules=30 train=8.7s [11s]
+  ANFIS-FCM+stk      macroF1=0.9197 acc=0.9720 F1_DoS=0.9983 rules=40 train=10.8s [11s]
+  -> /home/sammj/scn/results/metrics_long.csv (17700 rows)

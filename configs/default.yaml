@@ -1,0 +1,44 @@
+# All hyperparameters, seeds and settings. Paper values are the defaults.
+seeds: [0, 1, 2, 3, 4]
+
+sample:
+  totals: {dos: 1497, imp: 979, normal: 17524}   # paper: 20,000 rows
+  test_frac: 0.20
+  val_frac: 0.20          # of training, carved before SMOTE, used for tuning only
+  t_attack: 250.0         # HCRL: attacks start at t0 + 250 s
+
+smote:
+  enabled: true
+  k_neighbors: 30
+  sampling_strategy: not majority
+
+settings:
+  A:       {labels: id,        features: [can_id, dlc, d0, d1, d2, d3, d4, d5, d6, d7]}
+  A-noID:  {labels: id,        features: [dlc, d0, d1, d2, d3, d4, d5, d6, d7, log_dt]}
+  B:       {labels: corrected, features: [dlc, d0, d1, d2, d3, d4, d5, d6, d7, log_dt]}
+  B-ID:    {labels: corrected, features: [can_id, dlc, d0, d1, d2, d3, d4, d5, d6, d7, log_dt]}
+
+anfis:
+  epochs: 1               # paper
+  epochs_long: 5          # ablation, early stopping on validation
+  lr: 0.01
+  batch_size: 512
+  ridge: 1.0e-6
+  sigma_min: 1.0e-3
+  n_rules: 10             # Random / KMeans
+  sc:
+    binary: {radius: 0.20, squash: 0.20, accept: 0.5, reject: 0.15}
+    multi:  {radius: 0.25, squash: 0.25, accept: 0.5, reject: 0.15}
+    squash_fallback: 1.25
+    max_points: 5000
+  fcm: {n_clusters: 10, m: 2.0, maxiter: 100, error: 1.0e-5, sigma_floor: 1.0e-2}
+  kmeans: {n_clusters: 10, n_init: 10, sigma_floor: 1.0e-2, sweep: [5, 10, 20]}
+  stack_mode: paper       # paper | oof
+  oof_folds: 5
+
+baselines:
+  mlp: {hidden: [[32], [64], [64, 32]], max_epochs: 50, lr: 0.001}
+  fcm_clf: {k: [10, 20, 30], m: 2.0}
+  svm_rbf: {C: [1, 10]}
+  rf: {n_estimators: 200, max_depth: [null, 20]}
+  lr: {C: [0.1, 1, 10]}

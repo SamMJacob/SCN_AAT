@@ -1,0 +1,80 @@
+== setting=A-noID task=binary seed=0 variant=R20 (train [1981, 14019], test [495, 3505])
+  ANFIS-KMeans       macroF1=0.9772 acc=0.9898 F1_Attack=0.9602 rules=40 train=3.0s [3s]
+  ANFIS-KMeans+stk   macroF1=0.9859 acc=0.9938 F1_Attack=0.9754 rules=60 train=3.4s [3s]
+  ANFIS-FCM          macroF1=0.9842 acc=0.9930 F1_Attack=0.9724 rules=40 train=6.6s [10s]
+  ANFIS-FCM+stk      macroF1=0.9837 acc=0.9928 F1_Attack=0.9715 rules=60 train=9.7s [10s]
+  ANFIS-Random       macroF1=0.9808 acc=0.9915 F1_Attack=0.9665 rules=40 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9808 acc=0.9915 F1_Attack=0.9665 rules=60 train=0.6s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (32901 rows)
+== setting=A-noID task=binary seed=1 variant=R20 (train [1981, 14019], test [495, 3505])
+  ANFIS-KMeans       macroF1=0.9064 acc=0.9530 F1_Attack=0.8404 rules=40 train=1.0s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9444 acc=0.9738 F1_Attack=0.9039 rules=60 train=1.4s [1s]
+  ANFIS-FCM          macroF1=0.9466 acc=0.9750 F1_Attack=0.9077 rules=40 train=7.0s [10s]
+  ANFIS-FCM+stk      macroF1=0.9775 acc=0.9900 F1_Attack=0.9608 rules=60 train=10.2s [10s]
+  ANFIS-Random       macroF1=0.9765 acc=0.9895 F1_Attack=0.9591 rules=40 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9792 acc=0.9908 F1_Attack=0.9638 rules=60 train=0.6s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (33057 rows)
+== setting=A-noID task=binary seed=2 variant=R20 (train [1981, 14019], test [495, 3505])
+  ANFIS-KMeans       macroF1=0.9594 acc=0.9812 F1_Attack=0.9296 rules=40 train=0.9s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9836 acc=0.9928 F1_Attack=0.9714 rules=60 train=1.3s [1s]
+  ANFIS-FCM          macroF1=0.9562 acc=0.9798 F1_Attack=0.9241 rules=40 train=6.8s [10s]
+  ANFIS-FCM+stk      macroF1=0.9842 acc=0.9930 F1_Attack=0.9724 rules=60 train=10.0s [10s]
+  ANFIS-Random       macroF1=0.9793 acc=0.9908 F1_Attack=0.9638 rules=40 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9808 acc=0.9915 F1_Attack=0.9665 rules=60 train=0.7s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (33213 rows)
+== setting=A-noID task=binary seed=3 variant=R20 (train [1981, 14019], test [495, 3505])
+  ANFIS-KMeans       macroF1=0.9766 acc=0.9895 F1_Attack=0.9592 rules=40 train=1.0s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9847 acc=0.9932 F1_Attack=0.9733 rules=60 train=1.3s [1s]
+  ANFIS-FCM          macroF1=0.9831 acc=0.9925 F1_Attack=0.9705 rules=40 train=6.9s [10s]
+  ANFIS-FCM+stk      macroF1=0.9825 acc=0.9922 F1_Attack=0.9695 rules=60 train=10.1s [10s]
+  ANFIS-Random       macroF1=0.9787 acc=0.9905 F1_Attack=0.9629 rules=40 train=0.5s [1s]
+  ANFIS-Random+stk   macroF1=0.9820 acc=0.9920 F1_Attack=0.9685 rules=60 train=0.7s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (33369 rows)
+== setting=A-noID task=binary seed=4 variant=R20 (train [1981, 14019], test [495, 3505])
+  ANFIS-KMeans       macroF1=0.9853 acc=0.9935 F1_Attack=0.9743 rules=40 train=1.0s [1s]
+  ANFIS-KMeans+stk   macroF1=0.9858 acc=0.9938 F1_Attack=0.9752 rules=60 train=1.4s [1s]
+  ANFIS-FCM          macroF1=0.9835 acc=0.9928 F1_Attack=0.9711 rules=40 train=7.0s [10s]
+  ANFIS-FCM+stk      macroF1=0.9837 acc=0.9928 F1_Attack=0.9715 rules=60 train=10.2s [10s]
+  ANFIS-Random       macroF1=0.9694 acc=0.9862 F1_Attack=0.9468 rules=40 train=0.6s [1s]
+  ANFIS-Random+stk   macroF1=0.9802 acc=0.9912 F1_Attack=0.9654 rules=60 train=0.7s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (33525 rows)
+== setting=A-noID task=multi seed=0 variant=R20 (train [1198, 783, 14019], test [299, 196, 3505])
+  ANFIS-KMeans       macroF1=0.9535 acc=0.9782 F1_DoS=0.8730 rules=60 train=1.8s [3s]
+  ANFIS-KMeans+stk   macroF1=0.9900 acc=0.9958 F1_DoS=0.9724 rules=80 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9843 acc=0.9932 F1_DoS=0.9568 rules=60 train=15.9s [21s]
+  ANFIS-FCM+stk      macroF1=0.9897 acc=0.9958 F1_DoS=0.9739 rules=80 train=20.6s [21s]
+  ANFIS-Random       macroF1=0.9746 acc=0.9898 F1_DoS=0.9447 rules=60 train=1.0s [1s]
+  ANFIS-Random+stk   macroF1=0.9781 acc=0.9922 F1_DoS=0.9708 rules=80 train=1.3s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (33723 rows)
+== setting=A-noID task=multi seed=1 variant=R20 (train [1198, 783, 14019], test [299, 196, 3505])
+  ANFIS-KMeans       macroF1=0.9331 acc=0.9708 F1_DoS=0.8555 rules=60 train=2.0s [3s]
+  ANFIS-KMeans+stk   macroF1=0.9827 acc=0.9930 F1_DoS=0.9597 rules=80 train=2.6s [3s]
+  ANFIS-FCM          macroF1=0.9804 acc=0.9915 F1_DoS=0.9460 rules=60 train=16.0s [21s]
+  ANFIS-FCM+stk      macroF1=0.9803 acc=0.9925 F1_DoS=0.9628 rules=80 train=20.8s [21s]
+  ANFIS-Random       macroF1=0.9582 acc=0.9808 F1_DoS=0.8856 rules=60 train=1.0s [1s]
+  ANFIS-Random+stk   macroF1=0.9769 acc=0.9912 F1_DoS=0.9582 rules=80 train=1.3s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (33921 rows)
+== setting=A-noID task=multi seed=2 variant=R20 (train [1198, 783, 14019], test [299, 196, 3505])
+  ANFIS-KMeans       macroF1=0.9389 acc=0.9702 F1_DoS=0.8340 rules=60 train=2.0s [3s]
+  ANFIS-KMeans+stk   macroF1=0.9889 acc=0.9962 F1_DoS=0.9786 rules=80 train=2.5s [3s]
+  ANFIS-FCM          macroF1=0.9811 acc=0.9920 F1_DoS=0.9504 rules=60 train=15.7s [20s]
+  ANFIS-FCM+stk      macroF1=0.9845 acc=0.9950 F1_DoS=0.9786 rules=80 train=20.2s [20s]
+  ANFIS-Random       macroF1=0.9770 acc=0.9910 F1_DoS=0.9462 rules=60 train=0.9s [1s]
+  ANFIS-Random+stk   macroF1=0.9721 acc=0.9915 F1_DoS=0.9770 rules=80 train=1.1s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (34119 rows)
+== setting=A-noID task=multi seed=3 variant=R20 (train [1198, 783, 14019], test [299, 196, 3505])
+  ANFIS-KMeans       macroF1=0.9433 acc=0.9728 F1_DoS=0.8458 rules=60 train=1.8s [2s]
+  ANFIS-KMeans+stk   macroF1=0.9839 acc=0.9945 F1_DoS=0.9721 rules=80 train=2.4s [2s]
+  ANFIS-FCM          macroF1=0.9844 acc=0.9935 F1_DoS=0.9595 rules=60 train=16.2s [21s]
+  ANFIS-FCM+stk      macroF1=0.9867 acc=0.9950 F1_DoS=0.9705 rules=80 train=21.3s [21s]
+  ANFIS-Random       macroF1=0.9474 acc=0.9752 F1_DoS=0.8592 rules=60 train=1.2s [2s]
+  ANFIS-Random+stk   macroF1=0.9756 acc=0.9918 F1_DoS=0.9657 rules=80 train=1.5s [2s]
+  -> /home/sammj/scn/results/metrics_long.csv (34317 rows)
+== setting=A-noID task=multi seed=4 variant=R20 (train [1198, 783, 14019], test [299, 196, 3505])
+  ANFIS-KMeans       macroF1=0.9631 acc=0.9832 F1_DoS=0.8989 rules=60 train=2.2s [3s]
+  ANFIS-KMeans+stk   macroF1=0.9865 acc=0.9955 F1_DoS=0.9769 rules=80 train=2.8s [3s]
+  ANFIS-FCM          macroF1=0.9817 acc=0.9925 F1_DoS=0.9518 rules=60 train=16.1s [21s]
+  ANFIS-FCM+stk      macroF1=0.9819 acc=0.9942 F1_DoS=0.9785 rules=80 train=20.8s [21s]
+  ANFIS-Random       macroF1=0.9759 acc=0.9905 F1_DoS=0.9430 rules=60 train=1.0s [1s]
+  ANFIS-Random+stk   macroF1=0.9715 acc=0.9908 F1_DoS=0.9705 rules=80 train=1.2s [1s]
+  -> /home/sammj/scn/results/metrics_long.csv (34515 rows)

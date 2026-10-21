@@ -1,0 +1,19 @@
+data,features,model,ROC AUC,AUC std (folds)
+impersonation log (real boundary),payload+DLC,LR,0.5009,0.0017
+impersonation log (real boundary),payload+DLC,RF,0.4997,0.0021
+impersonation log (real boundary),payload+DLC,ANFIS-FCM,0.5002,0.0016
+"attack-free log (fake boundary, control)",payload+DLC,LR,0.5,0.0006
+"attack-free log (fake boundary, control)",payload+DLC,RF,0.5011,0.0021
+"attack-free log (fake boundary, control)",payload+DLC,ANFIS-FCM,0.5011,0.0021
+impersonation log (real boundary),"timing (log_dt, hamming)",LR,0.4988,0.0041
+impersonation log (real boundary),"timing (log_dt, hamming)",RF,0.5914,0.0134
+impersonation log (real boundary),"timing (log_dt, hamming)",ANFIS-FCM,0.4964,0.0078
+"attack-free log (fake boundary, control)","timing (log_dt, hamming)",LR,0.5001,0.0019
+"attack-free log (fake boundary, control)","timing (log_dt, hamming)",RF,0.5036,0.0047
+"attack-free log (fake boundary, control)","timing (log_dt, hamming)",ANFIS-FCM,0.4979,0.0059
+impersonation log (real boundary),all,LR,0.5016,0.0033
+impersonation log (real boundary),all,RF,0.605,0.0135
+impersonation log (real boundary),all,ANFIS-FCM,0.4988,0.0043
+"attack-free log (fake boundary, control)",all,LR,0.4996,0.0017
+"attack-free log (fake boundary, control)",all,RF,0.505,0.0083
+"attack-free log (fake boundary, control)",all,ANFIS-FCM,0.5033,0.0055
