@@ -13,6 +13,9 @@ The study answers two questions:
 2. **Clustering init.** How does ANFIS behave with Random vs K-Means vs Subtractive Clustering vs
    Fuzzy C-Means initialisation, everything else fixed?
 
+System architecture and implementation details for every method: `docs/ARCHITECTURE.md`.
+All code in one notebook: `CAN_ANFIS_AAT.ipynb` (every source file as a cell, plus tests, a demo run and
+the results; rebuild with `python scripts/make_notebook.py`).
 The results are in `results/REPORT_NOTES.md`, with per-setting tables in `results/*.md` and figures in `results/figures/`.
 
 ## Setup
@@ -61,6 +64,7 @@ python scripts/run_all.py --setting A-noID --task binary multi --no-smote --tag 
 python scripts/rule_sweep.py                                # KMeans R in {5,10,20}, validation only
 python scripts/probe_B.py                                   # Setting B learnability probe
 python -m src.eval.report                                   # tables, figures, REPORT_NOTES.md
+python scripts/make_arch_figures.py                         # architecture diagrams
 python scripts/make_report_docx.py                          # results/AAT_Report.docx
 ```
 
@@ -80,7 +84,9 @@ src/data/                      parse_otids.py, features.py, build_dataset.py (sa
 src/models/                    anfis.py (PyTorch ANFIS, hybrid LSE+Adam), subclust.py, inits.py,
                                anfis_classifiers.py (OvR + stacking), fcm_classifier.py, baselines.py
 src/eval/                      metrics.py, stats.py (McNemar), plots.py, report.py, notes.py
-scripts/                       run_all.py, data_report.py, probe_B.py, rule_sweep.py
+scripts/                       run_all.py, data_report.py, probe_B.py, rule_sweep.py,
+                               make_arch_figures.py, make_report_docx.py
+docs/ARCHITECTURE.md           system architecture and implementation details
 tests/                         parser, preprocessing, SC, ANFIS (sin·cos, XOR, LSE), inits
 ```
 

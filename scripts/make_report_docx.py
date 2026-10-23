@@ -22,7 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "results"
 FIG = RES / "figures"
 OUT = RES / "AAT_Report.docx"
-EXTRA_OUT = [Path("/mnt/c/Users/sammj/OneDrive/Desktop/AAT_Report.docx")]  # Windows desktop copy (WSL; Desktop is OneDrive-redirected)
+ARCH_OUT = RES / "Architecture.docx"
+DESKTOP = Path("/mnt/c/Users/sammj/OneDrive/Desktop")  # Windows desktop copy (WSL; Desktop is OneDrive-redirected)
 
 NAVY = RGBColor(0x1F, 0x3A, 0x5F)
 GREY = RGBColor(0x52, 0x51, 0x4E)
@@ -152,10 +153,14 @@ class Report:
     def p(self, text, style=None, italic=False, align=None):
         """Paragraph with **bold** and *italic* inline markup."""
         para = self.doc.add_paragraph(style=style)
-        for part in re.split(r"(\*\*[^*]+\*\*|\*[^*]+\*)", text):
+        for part in re.split(r"(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)", text):
             if not part:
                 continue
-            if part.startswith("**"):
+            if part.startswith("`"):
+                run = para.add_run(part[1:-1])
+                run.font.name = "Consolas"
+                run.font.size = Pt(9.5)
+            elif part.startswith("**"):
                 run = para.add_run(part[2:-2])
                 run.bold = True
             elif part.startswith("*"):
@@ -205,13 +210,14 @@ class Report:
 
     def table(self, rows, caption, col_widths=None, font=8.5, highlight=None, bold_first_col=False):
         """rows: header + body (strings). highlight(row) -> True shades the row light blue."""
-        self.tab_n += 1
-        cap = self.doc.add_paragraph(style="Caption")
-        r = cap.add_run(f"Table {self.tab_n}. ")
-        r.bold = True
-        cap.add_run(caption)
-        cap.paragraph_format.keep_with_next = True
-        cap.paragraph_format.space_after = Pt(4)
+        if caption:
+            self.tab_n += 1
+            cap = self.doc.add_paragraph(style="Caption")
+            r = cap.add_run(f"Table {self.tab_n}. ")
+            r.bold = True
+            cap.add_run(caption)
+            cap.paragraph_format.keep_with_next = True
+            cap.paragraph_format.space_after = Pt(4)
 
         t = self.doc.add_table(rows=len(rows), cols=len(rows[0]))
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -263,6 +269,98 @@ class Report:
 
 
 # ---------------------------------------------------------------- content
+def code_block(R, lines):
+    t = R.doc.add_table(rows=1, cols=1)
+    c = t.cell(0, 0)
+    shade(c, BAND_FILL)
+    cell_margins(t, 80, 80, 120, 120)
+    para = c.paragraphs[0]
+    para.paragraph_format.space_after = Pt(0)
+    para.paragraph_format.line_spacing = 1.0
+    for i, ln in enumerate(lines):
+        run = para.add_run(ln)
+        run.font.name, run.font.size = "Consolas", Pt(7.5)
+        if i < len(lines) - 1:
+            run.add_break()
+    R.doc.add_paragraph().paragraph_format.space_after = Pt(2)
+
+
+def appendix_from_md(R, path: Path, letter: str | None = None, skip_title: bool = False):
+    """Render a markdown file (headings, paragraphs, lists, tables, images, code) as an appendix."""
+    lines = path.read_text().splitlines()
+    i, para = 0, []
+
+    def flush_para():
+        if para:
+            R.p(" ".join(para))
+            para.clear()
+
+    while i < len(lines):
+        ln = lines[i]
+        s = ln.strip()
+        if s.startswith("```"):
+            flush_para()
+            j = i + 1
+            while not lines[j].strip().startswith("```"):
+                j += 1
+            code_block(R, lines[i + 1:j])
+            i = j + 1
+            continue
+        if s.startswith("#"):
+            flush_para()
+            level = len(s) - len(s.lstrip("#"))
+            title = s.lstrip("#").strip()
+            if level == 1:
+                if not skip_title:
+                    R.h(f"Appendix {letter}. {title}" if letter else title, 1)
+            elif letter:
+                R.h(f"{letter}.{title}", min(level, 3))
+            else:
+                R.h(title, min(level - 1, 3))
+            i += 1
+            continue
+        m = re.match(r"!\[(.*)\]\((.*)\)", s)
+        if m:
+            flush_para()
+            R.figure((path.parent / m.group(2)).resolve(), m.group(1))
+            i += 1
+            continue
+        if s.startswith("|"):
+            flush_para()
+            j = i
+            while j < len(lines) and lines[j].strip().startswith("|"):
+                j += 1
+            rows = [[c.strip() for c in l.strip().strip("|").split("|")] for l in lines[i:j]]
+            rows = [r for r in rows if not all(re.fullmatch(r":?-+:?", c) for c in r)]
+            R.table(rows, None, font=8)
+            i = j
+            continue
+        lm = re.match(r"(- |\d+\. )(.*)", s)
+        if lm:
+            flush_para()
+            item = [lm.group(2)]
+            i += 1
+            while i < len(lines) and lines[i].startswith("  ") and lines[i].strip() \
+                    and not re.match(r"\s*(- |\d+\. )", lines[i]):
+                item.append(lines[i].strip())
+                i += 1
+            text = " ".join(item)
+            if lm.group(1) == "- ":
+                R.p(text, style="List Bullet")
+            else:      # manual numbers: Word's shared numbering would continue across lists
+                q = R.p(lm.group(1) + text)
+                q.paragraph_format.left_indent = Cm(0.63)
+                q.paragraph_format.first_line_indent = Cm(-0.63)
+                q.paragraph_format.space_after = Pt(3)
+            continue
+        if not s:
+            flush_para()
+        else:
+            para.append(s)
+        i += 1
+    flush_para()
+
+
 def is_hybrid(row):
     return row[0].startswith("ANFIS")
 
@@ -402,7 +500,7 @@ def build():
         ["Hybrid (neuro-fuzzy)", "ANFIS (OvR)",
          "First-order Takagi–Sugeno, Gaussian MFs. One ANFIS per class (one-vs-rest)."],
         ["", "ANFIS + stacking (+stk)",
-         "Paper's design: a second ‘augmented’ ANFIS takes inputs + stage-1 scores and regresses the class."],
+         "Paper's design: a second ‘augmented’ ANFIS takes the stage-1 class scores and regresses the class index."],
         ["Non-hybrid soft computing", "MLP", "Pure neural network (sklearn, early stopping)."],
         ["", "FCM classifier", "Pure fuzzy: FCM clusters → membership-weighted class vote."],
         ["Classical ML", "LDA, LR, linear SVM, RBF SVM, Random Forest", "Validation-tuned."],
@@ -414,7 +512,7 @@ def build():
         "final epoch. The initial FIS comes from clustering the joint [input, target] space (as MATLAB's "
         "genfis2/genfis3 do). Initialisations:")
     R.bullets([
-        "**Random:** R = 10 centres drawn uniformly; widths from the data range.",
+        "**Random:** R = 10 centres drawn at random from the training points; widths = global feature std.",
         "**K-Means:** R = 10 hard clusters; widths = per-cluster standard deviation.",
         "**Subtractive clustering (SC):** Chiu's method with the paper's radius and squash factor; the "
         "number of rules is decided by the algorithm.",
@@ -631,13 +729,42 @@ def build():
     ], numbered=True)
     R.p("Code, configuration and all result tables: project repository (README.md, results/).", italic=True)
 
-    for out in (OUT, *EXTRA_OUT):
-        if out.parent.is_dir():
-            R.save(out)
-            print(f"wrote {out}  ({R.fig_n} figures, {R.tab_n} tables)")
+    R.page_break()
+    appendix_from_md(R, ROOT / "docs" / "ARCHITECTURE.md", "A")
+
+    save_both(R, OUT)
+
+
+def save_both(R, out):
+    for path in (out, DESKTOP / out.name):
+        if path.parent.is_dir():
+            R.save(path)
+            print(f"wrote {path}  ({R.fig_n} figures, {R.tab_n} tables)")
         else:
-            print(f"skipped {out} (folder not found)")
+            print(f"skipped {path} (folder not found)")
+
+
+def build_architecture():
+    """Standalone architecture document from docs/ARCHITECTURE.md."""
+    R = Report()
+    d = R.doc
+    for _ in range(6):
+        d.add_paragraph()
+    t = R.p("System Architecture and Implementation", align=WD_ALIGN_PARAGRAPH.CENTER)
+    t.runs[0].font.size, t.runs[0].bold, t.runs[0].font.color.rgb = Pt(24), True, NAVY
+    s = R.p("EV CAN-bus attack detection with ANFIS: data pipeline, hybrid neuro-fuzzy models, "
+            "baselines and evaluation", align=WD_ALIGN_PARAGRAPH.CENTER)
+    s.runs[0].font.size, s.runs[0].font.color.rgb = Pt(13), GREY
+    d.add_paragraph()
+    R.p("Soft Computing — Alternative Assessment Task (Hybrid Systems)", align=WD_ALIGN_PARAGRAPH.CENTER)
+    a = R.p("Sam M Jacob", align=WD_ALIGN_PARAGRAPH.CENTER)
+    a.runs[0].bold = True
+    R.p(date.today().strftime("%d %B %Y"), align=WD_ALIGN_PARAGRAPH.CENTER)
+    R.page_break()
+    appendix_from_md(R, ROOT / "docs" / "ARCHITECTURE.md", skip_title=True)
+    save_both(R, ARCH_OUT)
 
 
 if __name__ == "__main__":
     build()
+    build_architecture()

@@ -3,3 +3,8 @@ data/processed/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# notebook demo run outputs
+results/notebook_demo.csv
+results/preds/*_demo_*
+results/anfis_params/*_demo.npz
