@@ -255,8 +255,9 @@ def build() -> nbf.NotebookNode:
         code("display(Markdown((ROOT / 'results/probe_B.md').read_text()))\n"
              "summary('B', 'multi', ('macro_f1', 'f1_Imp'))"),
         md("## 14. Conclusions\n\n"
-           "- **Setting A reproduces the paper** (ANFIS-FCM+stk 99.99 % / 100 % accuracy), but the label is a "
-           "function of the CAN ID input, so almost every non-linear model hits the ceiling.\n"
+           "- **Setting A reproduces the paper** (ANFIS-FCM+stk 99.99 % / 100 % accuracy), but the labels are "
+           "defined from the CAN ID input, so almost every non-linear model hits the ceiling. DoS labels are correct "
+           "(no real ECU uses 0x000) but trivial; the Impersonation label (a legitimate ID) is label leakage.\n"
            "- **Q1 (A-noID):** Random Forest is the best model. The hybrid ANFIS clearly beats its pure-fuzzy "
            "ingredient (+0.036 / +0.101 macro-F1 over the FCM classifier) and is better than or equal to the MLP, "
            "with a small, interpretable rule base.\n"

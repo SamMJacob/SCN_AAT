@@ -399,8 +399,10 @@ def build():
         "evaluated it under one protocol shared by every model: train-only scaling and SMOTE, validation-only "
         "tuning and five random seeds.")
     R.p("The paper's numbers **reproduce** (our ANFIS-FCM+stk: 99.99 % binary, 100 % multiclass accuracy), "
-        "but the data analysis shows why: the class label is a function of the CAN ID, which is also an "
-        "input. On a fairer benchmark that removes the ID (**A-noID**), a **Random Forest is the best "
+        "but the data analysis shows why: the paper labels the classes by CAN ID, which is also an input. "
+        "For DoS this is correct (no real ECU uses ID 0x000) but makes detection trivial. For Impersonation, "
+        "which uses a legitimate ID, it also labels the genuine ECU's frames as attacks, so that result "
+        "measures ID recognition: label leakage. On a fairer benchmark that removes the ID (**A-noID**), a **Random Forest is the best "
         "model** (macro-F1 0.990 / 0.989). The hybrid ANFIS clearly beats its own non-hybrid ingredients: "
         "+0.036 / +0.101 macro-F1 over a pure fuzzy (FCM) classifier, and +0.019 over an MLP in the "
         "binary task.")
@@ -449,15 +451,18 @@ def build():
         "**DoS is genuinely distinct.** The DoS log contains 335,624 injected 0x000 frames with a single "
         "all-zero payload, in bursts (median gap 0.5 ms), throughout the log. However, all-zero payloads also "
         "occur on normal IDs (159,104 such frames in the attack-free log), so without the ID, DoS must be "
-        "recognised partly by timing.",
+        "recognised partly by timing. No real ECU uses 0x000, so **labelling 0x000 as DoS is correct**; "
+        "with the ID as an input, DoS detection is simply trivial.",
         "**Impersonation is invisible.** In the impersonation log, 0x164 traffic before and after the "
         "documented attack start (250 s) has the same rate (119.2 vs 118.9 Hz), the same payload patterns "
         "(χ² = 3.6, p = 0.999; no post-250 s payload is new), the same rolling-counter behaviour, the same "
         "total bus load, and no ID changes rate by more than 3 %. Only a tiny inter-arrival shift exists (KS "
         "D = 0.068 vs D = 0.016 for the same comparison on attack-free data).",
-        "**Consequence.** The paper's Impersonation class is defined by the ID alone: genuine and "
-        "malicious 0x164 frames share one label. With the CAN ID as an input feature, the task reduces to "
-        "an ID lookup.",
+        "**Consequence: label leakage for Impersonation.** 0x164 is a legitimate ID (5.3 % of the "
+        "attack-free drive), and the dataset's own documentation notes that impersonation cannot be "
+        "separated by ID. Yet the paper labels every 0x164 frame as an attack and also feeds the ID to the "
+        "model (Section III-B, p. 90867). Genuine and malicious 0x164 frames share one label, and the "
+        "Impersonation class reduces to an ID lookup.",
     ])
     R.figure(FIG / "data_impersonation_0x164.png",
              "0x164 traffic in the impersonation log before vs after the 250 s attack start: message rate, "
@@ -685,7 +690,8 @@ def build():
     R.h("5. Discussion and conclusions")
     R.bullets([
         "**The paper reproduces, but its headline is uninformative.** With the ID as input and labels "
-        "defined by the ID, almost any non-linear model reaches ≈100 %.",
+        "defined by the ID, almost any non-linear model reaches ≈100 %. The DoS results are valid but "
+        "trivial; the Impersonation results are label leakage, not attack detection.",
         "**Hybrid vs non-hybrid:** ANFIS is a genuine improvement over the pure fuzzy model it is built from "
         "and is competitive with (sometimes better than) an MLP, with a far smaller, interpretable rule base. "
         "It is not the most accurate model: a Random Forest is better or equal everywhere.",
@@ -704,7 +710,8 @@ def build():
         "attack-free log (other IDs).",
         "ANFIS was reimplemented in PyTorch rather than MATLAB. The stacking ANFIS regresses the class index "
         "(our reading of an ambiguous description).",
-        "The paper tuned on its test set; we tune only on a validation split.",
+        "The paper describes no validation split, so test-set leakage cannot be ruled out; we tune only on a "
+        "validation split.",
         "The paper's deep-learning baselines (CNN, LSTM, GRU, CNN-LSTM) were not re-run; their reported "
         "numbers are quoted only.",
         "Five seeds give limited power. ‘Within noise’ is a seed-spread rule, not a formal test. McNemar "
@@ -738,7 +745,11 @@ def build():
 def save_both(R, out):
     for path in (out, DESKTOP / out.name):
         if path.parent.is_dir():
-            R.save(path)
+            try:
+                R.save(path)
+            except PermissionError:
+                print(f"skipped {path} (file is open in another program; close it and re-run)")
+                continue
             print(f"wrote {path}  ({R.fig_n} figures, {R.tab_n} tables)")
         else:
             print(f"skipped {path} (folder not found)")

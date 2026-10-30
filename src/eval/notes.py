@@ -71,8 +71,11 @@ def _section_repro(wide) -> list[str]:
             "of the ID range, so no single linear cut on the ID isolates it, while a rule- or tree-based "
             "model can carve out the ID value. Our LR/linear SVM score higher than the paper's "
             "(see `results/commentary.md` for the check of why).",
-            "- Conclusion: the ~99.6 % headline is a property of the setting (the label is a function of "
-            "an input feature), not evidence that the hybrid model is needed.", ""]
+            "- Conclusion: the ~99.6 % headline is a property of the setting, not evidence that the hybrid "
+            "model is needed. The labels are a function of the CAN ID, which is also an input. For DoS the "
+            "ID-based label is correct (no real ECU uses 0x000) and the ID simply makes it trivial. For "
+            "Impersonation, a legitimate ID, the label also covers genuine ECU frames, so the class measures "
+            "ID recognition (label leakage).", ""]
     return out
 
 
@@ -251,7 +254,7 @@ DEVIATIONS = """## 7. Deviations from the paper and the original brief
   clipped (our reading of the paper's ambiguous description). Default `stack_mode = paper`
   (in-sample stage-1 outputs); `oof` (5-fold out-of-fold) is reported as an ablation.
 - **Tuning.** Baseline hyperparameters are chosen on a validation split (20 % of training, carved
-  before SMOTE). ANFIS uses the paper's values unchanged. The paper tuned on its test set; we never do.
+  before SMOTE). ANFIS uses the paper's values unchanged. The paper describes no validation split (it tunes "while training" and reports test results), so test-set leakage cannot be ruled out; we never touch the test set.
 - **Baselines.** The paper's deep-learning multiclass baselines (CNN, CNN-LSTM, GRU, LSTM) were
   not re-run; their reported numbers are quoted in the Setting A summary.
 - **Paper table numbering**: in-text references are off by one versus the captions. We cite captions.

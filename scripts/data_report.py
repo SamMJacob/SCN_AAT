@@ -185,11 +185,14 @@ def main() -> None:
 
     rep += ["## 5. Conclusions for the experimental design", "",
             "1. **DoS** is cleanly identifiable: one injected ID (0x000) with a constant all-zero payload, "
-            "present throughout the DoS log.",
+            "present throughout the DoS log. No real ECU uses 0x000, so the paper's ID-based DoS label is "
+            "**correct**; with the ID as an input it is merely trivial to detect.",
             "2. **Impersonation is essentially invisible in the data.** By rate, payload patterns, rolling "
             "counter and bus load, 0x164 traffic after 250 s is indistinguishable from before 250 s. "
-            "Only a tiny inter-arrival jitter shift exists (KS D ≈ 0.07). The paper's Impersonation class is therefore defined only by the "
-            "CAN ID: any 0x164 frame, genuine or not, gets the attack label.",
+            "Only a tiny inter-arrival jitter shift exists (KS D ≈ 0.07). 0x164 is a legitimate ID, so the "
+            "paper's Impersonation class is defined only by the CAN ID: any 0x164 frame, genuine or not, gets the "
+            "attack label. With the ID also an input, this is **label leakage**: the class measures ID "
+            "recognition, not attack detection.",
             "3. The brief's corrected labelling (post-250 s 0x164 = Imp, pre-250 s = Normal) is "
             "implemented as Setting B. Given these findings, it is used as a **learnability probe**, "
             "not as a main benchmark.",

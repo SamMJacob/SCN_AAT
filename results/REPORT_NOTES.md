@@ -20,8 +20,8 @@ Full details: `results/data_report.md`. Key evidence (impersonation log, 0x164 f
 - Total bus load: 2062.3 frames/s before vs 2062.7 after.
 - Per-ID rate ratio (after/before) across all 45 IDs: min 0.970, max 1.030. No ID appears, disappears or changes rate.
 
-1. **DoS** is cleanly identifiable: one injected ID (0x000) with a constant all-zero payload, present throughout the DoS log.
-2. **Impersonation is essentially invisible in the data.** By rate, payload patterns, rolling counter and bus load, 0x164 traffic after 250 s is indistinguishable from before 250 s. Only a tiny inter-arrival jitter shift exists (KS D ≈ 0.07). The paper's Impersonation class is therefore defined only by the CAN ID: any 0x164 frame, genuine or not, gets the attack label.
+1. **DoS** is cleanly identifiable: one injected ID (0x000) with a constant all-zero payload, present throughout the DoS log. No real ECU uses 0x000, so the paper's ID-based DoS label is **correct**; with the ID as an input it is merely trivial to detect.
+2. **Impersonation is essentially invisible in the data.** By rate, payload patterns, rolling counter and bus load, 0x164 traffic after 250 s is indistinguishable from before 250 s. Only a tiny inter-arrival jitter shift exists (KS D ≈ 0.07). 0x164 is a legitimate ID, so the paper's Impersonation class is defined only by the CAN ID: any 0x164 frame, genuine or not, gets the attack label. With the ID also an input, this is **label leakage**: the class measures ID recognition, not attack detection.
 3. The brief's corrected labelling (post-250 s 0x164 = Imp, pre-250 s = Normal) is implemented as Setting B. Given these findings, it is used as a **learnability probe**, not as a main benchmark.
 4. **Main benchmark (A-noID):** keep the paper's labels and drop the CAN ID. Models must then recognise the attack *message types* from payload and timing. This is non-trivial, and it is where hybrid vs non-hybrid differences can appear.
 
@@ -43,7 +43,7 @@ Full details: `results/data_report.md`. Key evidence (impersonation log, 0x164 f
 - Setting A, multiclass: 11 of 15 models reach macro-F1 ≥ 0.99 (ANFIS-FCM, ANFIS-FCM+stk, ANFIS-KMeans, ANFIS-KMeans+stk, ANFIS-Random+stk, ANFIS-SC, ANFIS-SC+stk, LR, MLP, RBF-SVM, RF).
 - The paper's ANFIS-SC/FCM results (≈ 99.6–99.7 % accuracy) are reproduced and slightly exceeded: ours ANFIS-FCM+stk binary accuracy = 0.9999, multiclass = 1.0000.
 - The paper's weak linear baselines are also reproduced in kind: LDA binary macro-F1 = 0.852 (paper 0.819). The CAN ID 0x164 = 356 lies in the middle of the ID range, so no single linear cut on the ID isolates it, while a rule- or tree-based model can carve out the ID value. Our LR/linear SVM score higher than the paper's (see `results/commentary.md` for the check of why).
-- Conclusion: the ~99.6 % headline is a property of the setting (the label is a function of an input feature), not evidence that the hybrid model is needed.
+- Conclusion: the ~99.6 % headline is a property of the setting, not evidence that the hybrid model is needed. The labels are a function of the CAN ID, which is also an input. For DoS the ID-based label is correct (no real ECU uses 0x000) and the ID simply makes it trivial. For Impersonation, a legitimate ID, the label also covers genuine ECU frames, so the class measures ID recognition (label leakage).
 
 ## 3. Comparison 1: non-hybrid vs hybrid
 
@@ -170,7 +170,7 @@ See `results/ablations.md` (stacking on/off, paper vs OOF stacking, SMOTE on/off
   clipped (our reading of the paper's ambiguous description). Default `stack_mode = paper`
   (in-sample stage-1 outputs); `oof` (5-fold out-of-fold) is reported as an ablation.
 - **Tuning.** Baseline hyperparameters are chosen on a validation split (20 % of training, carved
-  before SMOTE). ANFIS uses the paper's values unchanged. The paper tuned on its test set; we never do.
+  before SMOTE). ANFIS uses the paper's values unchanged. The paper describes no validation split (it tunes "while training" and reports test results), so test-set leakage cannot be ruled out; we never touch the test set.
 - **Baselines.** The paper's deep-learning multiclass baselines (CNN, CNN-LSTM, GRU, LSTM) were
   not re-run; their reported numbers are quoted in the Setting A summary.
 - **Paper table numbering**: in-text references are off by one versus the captions. We cite captions.
